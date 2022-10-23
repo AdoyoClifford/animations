@@ -103,8 +103,8 @@ class MainActivity : ComponentActivity() {
                             },
                             transitionSpec = {
                                 slideInHorizontally(
-                                    initialOffsetX = { -it }
-                                ) with slideOutHorizontally(targetOffsetX = { it })
+                                    initialOffsetX = { if (visible) it else -it }
+                                ) with slideOutHorizontally(targetOffsetX = { if (visible) -it else it })
                             }
                         )
                     }
